@@ -1,27 +1,22 @@
-// ../store/categories.js
+// store/categories.js
 
 const initialState = {
-  list:"computer"
-      // _id: "5fa38bec53d1a800171e9f01",
+    list: [
 
-      // "description": "good",
-      // "__v": 0
+      {
+        "_id": "5fa5ea79c642630017a87195",
+        "name": "electronics",
+        "description": "cairn terrier",
+        "__v": 0
+      },
+      {
+        "_id": "5fa5ea8ac642630017a87196",
+        "name": "dog",
+        "description": "yellow lab",
+        "__v": 0
+      }
+    ]
     
-    // {
-    //   "_id": "5fa5ea79c642630017a87195",
-    //   "name": "dog",
-    //   "description": "cairn terrier",
-    //   "__v": 0
-    // },
-    // {
-    //   "_id": "5fa5ea8ac642630017a87196",
-    //   "name": "dog",
-    //   "description": "yellow lab",
-    //   "__v": 0
-    // }
-    
-  
-  
 }
 
 export default function reducer( state=initialState, action ) {
@@ -33,7 +28,7 @@ export default function reducer( state=initialState, action ) {
       default: 
       return state;
   }
-
+  
 }
 
 // Action Creator

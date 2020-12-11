@@ -6,11 +6,10 @@ import Products from './products.js'
 
 function StoreFront() {
    return (
-     <Provider store={store}>
+    <Provider store={store}>
       <CurrentCategory />
       <Categories />
       <Products />
-   
     </Provider>
    )
 }

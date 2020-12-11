@@ -2,7 +2,6 @@
 import categoriesReducer from './categories.js';
 import {createStore, combineReducers} from 'redux';
 
-
 // make a list of reducers
 const reducers = combineReducers({
   categories: categoriesReducer
