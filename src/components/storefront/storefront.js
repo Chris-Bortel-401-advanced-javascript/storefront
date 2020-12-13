@@ -31,9 +31,6 @@ const useStyles = makeStyles((theme) => ({
   heroContent: {
     padding: theme.spacing(8, 0, 6),
   },
-  cardHeader: {
-    backgroundColor: theme.palette.grey[200]
-  },
   fullHeight: {
     height: "100%"
   },
