@@ -2,15 +2,21 @@
 // This is where we will be dispatching the actions when we click it 
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import * as category from '../../store/categories.js';
+import * as categoryActions from '../../store/categories.js';
 
 function Categories() {
 
   const dispatch = useDispatch();
   const categories = useSelector( (state) => state.categories.categories)
+  
+  const activateCategory = (payload) => {
+    dispatch (categoryActions.activate(payload))
+  }
   console.log(categories)
-  const activateCategory = () => {
-    dispatch (category.activate())
+
+  function handleClick(item) {
+    activateCategory(item.name)
+    console.log(item,'clicked')
   }
  
   
@@ -22,8 +28,12 @@ function Categories() {
   return (
     <>
     <span>
+    
       { categories.map(item => 
-      <button onclick={activateCategory} key={Math.random()}>{item.name}</button>)}
+        <div key={Math.random()} onClick={() => handleClick(item)} >
+          {item.name}
+        </div>
+      )}
     </span>
     </>
   )

@@ -18,7 +18,7 @@ const initialState = {
         "isActive": false
       }
     ], 
-    activeCategory: "cat 1"
+    activeCategory: ""
 
     
 }
@@ -28,7 +28,7 @@ export default function reducer( state=initialState, action ) {
 
   switch(type) {
     case 'ACTIVATE':
-      return { ...state,  categories: state.list }
+      return { categories: state.categories, activeCategory: payload }
       default: 
       return state;
   }
@@ -36,10 +36,10 @@ export default function reducer( state=initialState, action ) {
 }
 
 // Action Creator
-export const activate = () => {
+export const activate = (payload) => {
   return {
     type: 'ACTIVATE',
-    // payload:categories
+    payload: payload
   }
 } 
 
