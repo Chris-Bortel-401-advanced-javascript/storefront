@@ -18,7 +18,7 @@ const initialState = {
         "isActive": false
       }
     ], 
-    activeCategory: ""
+    activeCategory: {}
 
     
 }
@@ -27,8 +27,10 @@ export default function reducer( state=initialState, action ) {
   const {type, payload} = action;
 
   switch(type) {
-    case 'ACTIVATE':
-      return { categories: state.categories, activeCategory: payload }
+    case 'ACTIVECATEGORY':
+      return { ...state, activeCategory: payload }
+    case 'INITIALIZECATEGORY':
+      return { ...state, categories: payload, activeCategory: payload[0]}
       default: 
       return state;
   }
@@ -36,12 +38,21 @@ export default function reducer( state=initialState, action ) {
 }
 
 // Action Creator
-export const activate = (payload) => {
+export const changeCategory = (category) => {
   return {
-    type: 'ACTIVATE',
-    payload: payload
+    type: 'ACTIVECATEGORY',
+    payload: category
   }
-} 
+}
+
+  export const initalizeCategory = (categoryArray) => {
+    return {
+      type: 'INITALIZECATEGORY',
+      payload: categoryArray
+    }
+  } 
+
+
 
 // This is where we are going to have the initial state and the reducers
 
