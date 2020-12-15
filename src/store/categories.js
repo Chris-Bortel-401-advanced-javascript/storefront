@@ -19,18 +19,29 @@ const initialState = {
       }
     ], 
     activeCategory: {}
-
-    
+ 
 }
 
 export default function reducer( state=initialState, action ) {
   const {type, payload} = action;
 
   switch(type) {
-    case 'ACTIVECATEGORY':
-      return { ...state, activeCategory: payload }
     case 'INITIALIZECATEGORY':
-      return { ...state, categories: payload, activeCategory: payload[0]}
+      return { ...state, isActive: false, categories: payload, activeCategory: payload[0]}
+
+    case 'ACTIVECATEGORY':
+      console.log('here')
+      let variable = state.categories
+      let totalArr = [];
+
+      variable.forEach(theCategory => {
+        if (payload._id === theCategory._id) {
+          theCategory.isActive = true
+        }
+        totalArr.push(theCategory)
+      })
+
+      return { ...state, categories: totalArr, activeCategory: payload }
       default: 
       return state;
   }
@@ -38,6 +49,14 @@ export default function reducer( state=initialState, action ) {
 }
 
 // Action Creator
+
+export const initalizeCategory = (categoryArray) => {
+  return {
+    type: 'INITALIZECATEGORY',
+    payload: categoryArray
+  }
+} 
+
 export const changeCategory = (category) => {
   return {
     type: 'ACTIVECATEGORY',
@@ -45,16 +64,13 @@ export const changeCategory = (category) => {
   }
 }
 
-  export const initalizeCategory = (categoryArray) => {
-    return {
-      type: 'INITALIZECATEGORY',
-      payload: categoryArray
-    }
-  } 
 
 
 
-// This is where we are going to have the initial state and the reducers
+
+
+
+  // This is where we are going to have the initial state and the reducers
 
 // Shows acategories of all of the categories, which tells me that the initial state will have a list of categories. 
 // we will be dispatching an actionm when we click to activate it

@@ -8,32 +8,27 @@ function Categories() {
 
   const dispatch = useDispatch();
   const categories = useSelector( (state) => state.categories.categories)
-  
+  const cat = useSelector((state) => state.categories)
+  // TODO: How do I change the state in the obj.? Do I even need an is active property?
+
   const changeActive = (category) => {
     dispatch (changeCategory(category))
-    console.log(category,'clicked')
-
+    // console.log(category,'clicked')
   }
-  console.log(categories)
-
-  // function handleClick(ite) {
-  //   activateCategory(item.name)
-  // }
- 
-  
-  // dispatcher() that dispatches active
-
-  // handleClick() that dispatches active {
-    // dispatcher()
-  
+  console.log(cat)
   return (
     <>
     <span>
     
-      { categories.map(category => 
+      { categories.map(category => {
+        {/* console.log(category) */}
+        return(
+
         <button key={category._id} onClick={() => changeActive(category)} >
           {category.name}
         </button>
+        )
+      }
       )}
     </span>
     </>
