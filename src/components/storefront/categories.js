@@ -21,7 +21,6 @@ function Categories() {
     <span>
     
       { categories.map(category => {
-        {/* console.log(category) */}
         return(
 
         <button key={category._id} onClick={() => changeActive(category)} >

@@ -1,22 +1,28 @@
-// store/categories.js
-
 const initialState = {
    categories: [
 
-      {
-        "_id": "5fa5ea79c642630017a87195",
-        "name": "electronics",
-        "description": "cairn terrier",
-        "__v": 0,
-        "isActive": false
-      },
-      {
-        "_id": "5fa5ea8ac642630017a87196",
-        "name": "dog",
-        "description": "yellow lab",
-        "__v": 0,
-        "isActive": false
-      }
+    {
+      "_id": "5fd8424323796c001762d37d",
+      "name": "Electronics",
+      "description": "These are for work, or for fun",
+      "__v": 0,
+      "isActive": false
+    },
+    {
+      "_id": "5fd8438b23796c001762d37f",
+      "name": "Books",
+      "description": "These tomes are for pure enjoyment",
+      "__v": 0,
+      "isActive": false
+    },
+    {
+      "_id": "5fd843ce23796c001762d380",
+      "name": "Records",
+      "description": "These masterpieces will leave you in auditory bliss",
+      "__v": 0,
+      "isActive": false
+
+    }
     ], 
     activeCategory: {}
  
@@ -30,7 +36,6 @@ export default function reducer( state=initialState, action ) {
       return { ...state, isActive: false, categories: payload, activeCategory: payload[0]}
 
     case 'ACTIVECATEGORY':
-      console.log('here')
       let variable = state.categories
       let totalArr = [];
 
