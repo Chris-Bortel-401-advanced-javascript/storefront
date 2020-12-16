@@ -5,22 +5,19 @@ const initialState = {
       "_id": "5fd8424323796c001762d37d",
       "name": "Electronics",
       "description": "These are for work, or for fun",
-      "__v": 0,
-      "isActive": false
+      "__v": 0
     },
     {
       "_id": "5fd8438b23796c001762d37f",
       "name": "Books",
       "description": "These tomes are for pure enjoyment",
-      "__v": 0,
-      "isActive": false
+      "__v": 0
     },
     {
       "_id": "5fd843ce23796c001762d380",
       "name": "Records",
       "description": "These masterpieces will leave you in auditory bliss",
-      "__v": 0,
-      "isActive": false
+      "__v": 0
 
     }
     ], 
@@ -32,21 +29,12 @@ export default function reducer( state=initialState, action ) {
   const {type, payload} = action;
 
   switch(type) {
-    case 'INITIALIZECATEGORY':
-      return { ...state, isActive: false, categories: payload, activeCategory: payload[0]}
+    // case 'INITIALIZECATEGORY':
+    //   return { ...state, categories: payload, activeCategory: payload[0]}
 
     case 'ACTIVECATEGORY':
-      let variable = state.categories
-      let totalArr = [];
 
-      variable.forEach(theCategory => {
-        if (payload._id === theCategory._id) {
-          theCategory.isActive = true
-        }
-        totalArr.push(theCategory)
-      })
-
-      return { ...state, categories: totalArr, activeCategory: payload }
+      return { ...state, activeCategory: payload }
       default: 
       return state;
   }
@@ -68,12 +56,6 @@ export const changeCategory = (category) => {
     payload: category
   }
 }
-
-
-
-
-
-
 
   // This is where we are going to have the initial state and the reducers
 

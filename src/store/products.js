@@ -85,8 +85,7 @@ const initialState = {
       "__v": 0
     }
    ], 
-   activeCategory: {}
-
+   
 }
 
 export default function reducer( state=initialState, action ) {
@@ -94,30 +93,36 @@ export default function reducer( state=initialState, action ) {
 
  switch(type) {
 
-   case 'ACTIVECATEGORY':
-     let variable = state.categories
-     let totalArr = [];
-
-     variable.forEach(theCategory => {
-       if (payload._id === theCategory._id) {
-         theCategory.isActive = true
-       }
-       totalArr.push(theCategory)
-     })
-
-     return { ...state, categories: totalArr, activeCategory: payload }
+   case 'INITIALIZEPRODUCTS':
+     return { ...state, products: payload}
      default: 
      return state;
  }
- 
 }
+
+// I know that I am going to need an action. Do I just use active category action, but change it to displayed products?
+
+
+//  let variable = state.products
+    //  let productsArr = [];
+
+    //  variable.filter(theProducts => {
+    //    if (payload.category === theProducts.category) {
+    //      console.log('we are here')
+    //      productsArr.push(theProducts)
+    //     //  theCategory.isActive = true
+    //    }
+    //  })
+
+    //  return { ...state, products: productsArr, activeCategory: payload }
+
 
 // Action Creator
 
-export const changeCategory = (category) => {
+export const initializeProducts = (productsArr) => {
  return {
-   type: 'ACTIVECATEGORY',
-   payload: category
+   type: 'INITIALIZEPRODUCTS',
+   payload: productsArr
  }
 }
 

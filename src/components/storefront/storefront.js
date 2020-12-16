@@ -9,7 +9,7 @@ import store from '../../store/'
 import {Provider} from 'react-redux';
 import Categories from './categories.js'
 import CurrentCategory from './current-category.js'
-// import Products from './products.js'
+import Products from './products.js'
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -55,7 +55,7 @@ function StoreFront() {
       </Container>
       <CurrentCategory />
       <Categories />
-      {/* <Products /> */}
+      <Products />
     </Provider>
    )
 }
