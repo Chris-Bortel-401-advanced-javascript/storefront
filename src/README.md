@@ -4,21 +4,18 @@
 <index>
   <App>
     <Header />
-    <StoreFront>
-      s:counter
-      r:reducer
-      r:a increment
-      r:a decrement
-      
+    <StoreFront>      
       <Categories>
         r:s categories
-        r:a display
-        r:a decrement
+        r:a changeCategory
       </Categories>
       
       <Products>
-
+         s:products
+         s:activeCategory
       </Products>
+
+    
     </StoreFront>
     <Footer />
   </App>
@@ -26,19 +23,7 @@
 ```
 
 
+### Lab 37: Shopping Cart
 ```
-{
-  "count": 1,
-  "results": [
-    {
-      "_id": "5f8798edcd2e0500175b2857",
-      "name": "banana",
-      "category": "fruit",
-      "description": "yellow",
-      "price": 1.99,
-      "inStock": 50,
-      "__v": 0
-    }
-  ]
-}
+
 ```
