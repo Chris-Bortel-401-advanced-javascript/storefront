@@ -1,6 +1,5 @@
 const initialState = {
-  //  If active cat  matches product category, show those products.
-
+  
   products: [
 
     {
@@ -85,7 +84,7 @@ const initialState = {
       "__v": 0
     }
    ], 
-   
+
 }
 
 export default function reducer( state=initialState, action ) {
@@ -99,25 +98,6 @@ export default function reducer( state=initialState, action ) {
      return state;
  }
 }
-
-// I know that I am going to need an action. Do I just use active category action, but change it to displayed products?
-
-
-//  let variable = state.products
-    //  let productsArr = [];
-
-    //  variable.filter(theProducts => {
-    //    if (payload.category === theProducts.category) {
-    //      console.log('we are here')
-    //      productsArr.push(theProducts)
-    //     //  theCategory.isActive = true
-    //    }
-    //  })
-
-    //  return { ...state, products: productsArr, activeCategory: payload }
-
-
-// Action Creator
 
 export const initializeProducts = (productsArr) => {
  return {

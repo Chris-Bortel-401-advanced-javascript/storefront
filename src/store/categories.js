@@ -29,8 +29,6 @@ export default function reducer( state=initialState, action ) {
   const {type, payload} = action;
 
   switch(type) {
-    // case 'INITIALIZECATEGORY':
-    //   return { ...state, categories: payload, activeCategory: payload[0]}
 
     case 'ACTIVECATEGORY':
 
@@ -40,8 +38,6 @@ export default function reducer( state=initialState, action ) {
   }
   
 }
-
-// Action Creator
 
 export const initalizeCategory = (categoryArray) => {
   return {
@@ -56,8 +52,3 @@ export const changeCategory = (category) => {
     payload: category
   }
 }
-
-  // This is where we are going to have the initial state and the reducers
-
-// Shows acategories of all of the categories, which tells me that the initial state will have a list of categories. 
-// we will be dispatching an actionm when we click to activate it
