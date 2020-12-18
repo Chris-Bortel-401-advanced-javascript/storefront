@@ -1,27 +1,27 @@
 const initialState = {
-   categories: [
+  categories: [
 
-    {
-      "_id": "5fd8424323796c001762d37d",
-      "name": "Electronics",
-      "description": "These are for work, or for fun",
-      "__v": 0
-    },
-    {
-      "_id": "5fd8438b23796c001762d37f",
-      "name": "Books",
-      "description": "These tomes are for pure enjoyment",
-      "__v": 0
-    },
-    {
-      "_id": "5fd843ce23796c001762d380",
-      "name": "Records",
-      "description": "These masterpieces will leave you in auditory bliss",
-      "__v": 0
+      {
+        "_id": "5fd8424323796c001762d37d",
+        "name": "Electronics",
+        "description": "These are for work, or for fun",
+        "__v": 0
+      },
+      {
+        "_id": "5fd8438b23796c001762d37f",
+        "name": "Books",
+        "description": "These tomes are for pure enjoyment",
+        "__v": 0
+      },
+      {
+        "_id": "5fd843ce23796c001762d380",
+        "name": "Records",
+        "description": "These masterpieces will leave you in auditory bliss",
+        "__v": 0
 
-    }
-    ], 
-    activeCategory: {}
+      }
+  ], 
+  activeCategory: {}
  
 }
 

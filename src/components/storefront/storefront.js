@@ -10,6 +10,7 @@ import {Provider} from 'react-redux';
 import Categories from './categories.js'
 import CurrentCategory from './current-category.js'
 import Products from './products.js'
+// import SimpleCart from '../cart/simplecart.js'
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -56,6 +57,7 @@ function StoreFront() {
       <CurrentCategory />
       <Categories />
       <Products />
+      {/* <SimpleCart /> */}
     </Provider>
    )
 }
